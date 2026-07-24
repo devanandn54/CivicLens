@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+data/raw/
+data/processed/
+.venv/
+node_modules/
+diarize_run*.log
+diarize_run*.pid
+.tokensave/
+.claude/

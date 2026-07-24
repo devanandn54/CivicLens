@@ -1,0 +1,23 @@
+# Week 10 — CI eval gate (stub now so the shape exists).
+# When you wire this up you'll need: a seeded eval database (or Supabase),
+# secrets for DATABASE_URL + GROQ_API_KEY, and a fixed golden subset.
+name: eval-gate
+on:
+  pull_request:
+    paths:
+      - "api/**"
+      - "ingestion/**"
+      - "evals/**"
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r api/requirements.txt
+      - run: python evals/run_evals.py --k 5
+        env:
+          DATABASE_URL: ${{ secrets.EVAL_DATABASE_URL }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}

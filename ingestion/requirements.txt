@@ -1,0 +1,13 @@
+# Week 1
+yt-dlp
+groq
+psycopg[binary]
+python-dotenv
+pyannote.audio          # diarization (CPU ok); needs HF_TOKEN + model gate acceptance
+torch --index-url https://download.pytorch.org/whl/cpu
+
+# Week 3
+sentence-transformers   # local BGE embeddings
+
+# Week 2 (uncomment when you get there)
+# docling               # agenda PDF parsing
