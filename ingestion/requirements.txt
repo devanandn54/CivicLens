@@ -9,5 +9,5 @@ torch --index-url https://download.pytorch.org/whl/cpu
 # Week 3
 sentence-transformers   # local BGE embeddings
 
-# Week 2 (uncomment when you get there)
-# docling               # agenda PDF parsing
+# Week 2
+docling                 # agenda PDF parsing
